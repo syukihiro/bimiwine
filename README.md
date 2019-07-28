@@ -36,6 +36,7 @@ Things you may want to cover:
 - has_many :wines
 - has_many :favorites
 - has_many :features, through: :users_features_tag
+- has_many :users_features_tag
 - has_one :profile
 
 ## Profilesテーブル
@@ -64,6 +65,7 @@ Things you may want to cover:
 - has_many :wines_images
 - has_many :users, through: :favorites
 - has_many :features, through: :wines_features_tag
+- has_many :wines_features_tag
 
 ## Wines_imagesテーブル
 
@@ -96,6 +98,9 @@ Things you may want to cover:
 ### Association
 - has_many :users, through: :users_features_tag
 - has_many :wines, through: :wines_features_tag
+- has_many :users_features_tag
+- has_many :wines_features_tag
+
 
 ## Users_features_tagテーブル
 
