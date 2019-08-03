@@ -23,6 +23,38 @@ Things you may want to cover:
 
 * ...
 
+# アプリケーションの概要
+
+・ワインの投稿アプリ
+
+# アプリケーションの機能一覧
+
+・ユーザー新規登録機能
+・ユーザーログイン/ログアウト機能
+・マイページ表示機能
+・ワイン投稿/編集機能
+・いいね機能
+・ワインのカテゴリー登録機能
+・カテゴリー検索機能
+
+# アプリケーション内で使用している技術一覧
+
+|種別|名称|
+|---|----|
+|開発言語|Ruby(ver 2.5.1)|
+|フレームワーク|Ruby on Rails(ver 5.2.3)|
+|マークアップ|HTML(Haml),CSS(Sass)|
+|フロントエンド|JavaScript(jQuery)|
+|DB|MySQL|
+|本番環境|AWS ES2|
+|Webサーバー|Nginx|
+|applicationサーバー|Unicorn|
+|画像アップロード|carrierwave, AWS S3|
+|自動デプロイ|capistrano|
+|ユーザー管理|devise|
+
+# データベース
+
 ## Usersテーブル
 
 |Column|Type|Options|
