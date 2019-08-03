@@ -1,0 +1,15 @@
+= render 'module/header'
+.content
+  %h.newpost New Post Wine
+  .wines
+    = render 'wines-box'
+    = render 'wines-box'
+    = render 'wines-box'
+.content
+  .wines
+    = render 'wines-box'
+    = render 'wines-box'
+    = render 'wines-box'
+.content-down
+  = image_tag "wine.jpg", class: 'content-down_img'
+= render 'module/footer'
