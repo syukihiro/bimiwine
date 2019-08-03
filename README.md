@@ -29,13 +29,13 @@ Things you may want to cover:
 
 # アプリケーションの機能一覧
 
-・ユーザー新規登録機能
-・ユーザーログイン/ログアウト機能
-・マイページ表示機能
-・ワイン投稿/編集機能
-・いいね機能
-・ワインのカテゴリー登録機能
-・カテゴリー検索機能
+- ユーザー新規登録機能
+- ユーザーログイン/ログアウト機能
+- マイページ表示機能
+- ワイン投稿/編集機能
+- いいね機能
+- ワインのカテゴリー登録機能
+- カテゴリー検索機能
 
 # アプリケーション内で使用している技術一覧
 
@@ -90,6 +90,7 @@ Things you may want to cover:
 |Column|Type|Options|
 |------|----|-------|
 |user_id|reference|foreign_key: true|
+|name|text||
 |comment|text||
 |shop_name|text||
 
@@ -153,3 +154,9 @@ Things you may want to cover:
 
 ### Association
 - belong_to :wine
+
+# ER図
+
+https://www.lucidchart.com/invitations/accept/b3f9aa42-50dc-4cd0-be77-ed7ae0011f94
+
+まだ実装していない機能等あります。そのためER図の表記と上記テーブルとは相違があるものもあります。随時実装予定となります。
