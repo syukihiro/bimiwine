@@ -1,6 +1,10 @@
 Rails.application.routes.draw do
   
-  devise_for :users
-  get '/wines/index'
-  
+  devise_for :users, controllers: {
+    registrations: 'users/registrations',
+    sessions: 'users/sessions'
+  }
+  root 'wines#index'
+  get 'wines/index'
+
 end
