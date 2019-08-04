@@ -144,6 +144,7 @@ Things you may want to cover:
 
 ### Association
 - belong_to :user
+- belong_to :feature
 
 ## Wines_features_tagsテーブル
 
@@ -154,6 +155,7 @@ Things you may want to cover:
 
 ### Association
 - belong_to :wine
+- belong_to :feature
 
 # ER図
 
