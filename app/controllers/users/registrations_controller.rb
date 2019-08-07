@@ -13,7 +13,12 @@ class Users::RegistrationsController < Devise::RegistrationsController
   # POST /resource
   def create
     @user = User.new(user_params)
-    @user.save
+    if  @user.save
+        sign_in @user
+      redirect_to "/users/#{current_user.id}"
+    else
+      redirect_to new_user_registration_path
+    end
   end
   # GET /resource/edit
   # def edit

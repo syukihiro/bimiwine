@@ -1,0 +1,30 @@
+.header2
+  = link_to '/wines/index' do
+    = image_tag 'IMG_7119.jpg', class: 'bimi-m2'
+.content3
+  .content3-title
+    %span Name: #{@user.nickname}
+  .content3-menu
+    = link_to "#" do
+      %i.far.fa-heart
+      %span いいね一覧
+    = link_to "#" do
+      %i.far.fa-address-card
+      %span プロフィール編集
+    %i.fas.fa-sign-out-alt
+    = link_to "ログアウト", destroy_user_session_path, method: :delete, class: 'navbar-link'
+.post-box
+  %ul
+    %li
+      = image_tag "red-wine.jpg", class: "wines-pict2"
+    %li
+      = image_tag "red-wine.jpg", class: "wines-pict2"
+    %li
+      = image_tag "red-wine.jpg", class: "wines-pict2"
+    %li
+      = image_tag "red-wine.jpg", class: "wines-pict2"
+    %li
+      = image_tag "red-wine.jpg", class: "wines-pict2"
+    %li
+      = image_tag "red-wine.jpg", class: "wines-pict2"
+= render 'module/footer'

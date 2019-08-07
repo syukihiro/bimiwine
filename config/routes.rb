@@ -6,5 +6,6 @@ Rails.application.routes.draw do
   }
   root 'wines#index'
   get 'wines/index'
-
+  get 'users/:id' => 'users#show'
+  
 end

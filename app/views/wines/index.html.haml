@@ -12,4 +12,5 @@
     = render 'wines-box'
 .content-down
   = image_tag "wine.jpg", class: 'content-down_img'
+= link_to "ログアウト", destroy_user_session_path, method: :delete, :class => 'navbar-link'
 = render 'module/footer'
