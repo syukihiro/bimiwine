@@ -5,9 +5,14 @@
     .top-header__up__right
       %input{type: "seach", name: "header-seach", placeholder: "  search for wine...", class: "header-seach"}
   .top-header__down
-    .top-header__down__new
-      = link_to "/users/sign_up" do
-        新規会員登録
-    .top-header__down__login
-      = link_to "/users/sign_in" do
-        ログイン
+    - if user_signed_in?
+      .top-header__down__new
+        = link_to "/users/#{current_user.id}" do
+          マイページ
+    - else
+      .top-header__down__new
+        = link_to "/users/sign_up" do
+          新規会員登録
+      .top-header__down__login
+        = link_to "/users/sign_in" do
+          ログイン
