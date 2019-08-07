@@ -29,6 +29,7 @@
 |画像アップロード|carrierwave, AWS S3|
 |自動デプロイ|capistrano|
 |ユーザー管理|devise|
+|テストコード|RSpec|
 
 # データベース
 
