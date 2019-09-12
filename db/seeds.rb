@@ -5,3 +5,11 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+Feature.create(name: 'フルーティ')
+Feature.create(name: 'エレガント')
+Feature.create(name: 'フルボディ')
+Feature.create(name: 'ライトボディ')
+Feature.create(name: '樽の香り')
+Feature.create(name: '飲みやすい')
+Feature.create(name: '美味しい')
