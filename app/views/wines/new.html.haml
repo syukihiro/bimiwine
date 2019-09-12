@@ -1,0 +1,27 @@
+.header2
+  = link_to '/wines/index' do
+    = image_tag 'IMG_7119.jpg', class: 'bimi-m2'
+= form_with(model: @wine, local: true) do |f|
+  .postbody
+    .postbody-header
+      %h New Post
+    .postbody-image
+      %label.label
+        %i.fas.fa-image
+        %i.fas.fa-file-upload.add
+          = f.fields_for :wines_images do |img|
+            = img.file_field :images, id: "file", class: 'image-post'
+    .postbody-name
+      = f.label :wine_name
+      = f.text_field :name, class: "postbody-name__input", placeholder: "ワインの名前を入力してください"
+    .postbody-shopname
+      = f.label :shop_name
+      = f.text_field :shop_name, class: "postbody-name__input", placeholder: "お店の名前を入力して下さい"
+    .postbody-comment
+      = f.label :comment
+      = f.text_field :comment, class: "postbody-name__input", placeholder: "コメントを入力して下さい"
+    .postbody-category
+      = f.collection_check_boxes :feature_ids, @feature, :id, :name, include_hidden: false do |m|
+        = m.label { m.check_box + m.text }
+    .postbody-submit
+      = f.submit "投稿", class: "submit"

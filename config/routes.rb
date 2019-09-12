@@ -7,5 +7,11 @@ Rails.application.routes.draw do
   root 'wines#index'
   get 'wines/index'
   get 'users/:id' => 'users#show'
+
+  resources :wines, only: [:new, :create] do
+    collection do
+      get :wines
+    end
+  end
   
 end
