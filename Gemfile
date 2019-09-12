@@ -69,3 +69,7 @@ gem 'font_awesome5_rails'
 gem 'jquery-rails'
 gem 'jquery-turbolinks'
 gem 'rspec-rails'
+gem 'carrierwave'
+gem 'rmagick'
+gem 'nested_form_fields'
+gem "select2-rails"
