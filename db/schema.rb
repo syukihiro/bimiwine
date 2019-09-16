@@ -57,5 +57,6 @@ ActiveRecord::Schema.define(version: 2019_08_08_012029) do
     t.index ["wine_id"], name: "index_wines_images_on_wine_id"
   end
 
+  add_foreign_key "wines", "users"
   add_foreign_key "wines_images", "wines"
 end
