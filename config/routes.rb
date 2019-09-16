@@ -11,7 +11,7 @@ Rails.application.routes.draw do
   resources :wines, only: [:new, :create] do
     collection do
       get :wines
+      get :postcomplete
     end
   end
-  
 end
