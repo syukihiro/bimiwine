@@ -11,7 +11,15 @@ class WinesController < ApplicationController
 
   def create
     @wine = Wine.new(wine_params)
-    @wine.save!
+    if @wine.save!
+      redirect_to postcomplete_wines_path
+    else
+      render 'new'
+  end
+end
+
+  def postcomplete
+
   end
 
   private
