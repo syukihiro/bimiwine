@@ -17,17 +17,10 @@
     %i.fas.fa-sign-out-alt
     = link_to "ログアウト", destroy_user_session_path, method: :delete, class: 'navbar-link'
 .post-box
-  %ul
-    %li
-      = image_tag "red-wine.jpg", class: "wines-pict2"
-    %li
-      = image_tag "red-wine.jpg", class: "wines-pict2"
-    %li
-      = image_tag "red-wine.jpg", class: "wines-pict2"
-    %li
-      = image_tag "red-wine.jpg", class: "wines-pict2"
-    %li
-      = image_tag "red-wine.jpg", class: "wines-pict2"
-    %li
-      = image_tag "red-wine.jpg", class: "wines-pict2"
+  - if @winesimages.present?
+    - @winesimages.each do |image|
+      %ul
+        %li
+          = link_to '#' do
+            = image_tag image.images.url, class: "wines-pict2"
 = render 'module/footer'
