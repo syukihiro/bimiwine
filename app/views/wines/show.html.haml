@@ -1,0 +1,21 @@
+.header2
+  = link_to '/wines/index' do
+    = image_tag 'IMG_7119.jpg', class: 'bimi-m2'
+.wines-show__content
+  .wines-show__content-box
+    .wines-show__content-box_phot
+      = image_tag @wineimages.images.url, class: "content-box_phot"
+    .wines-show__content-box_name
+      %div NAME : #{@wine.name}
+    - if @wine.comment.present?
+      .wines-show__content-box_comment
+        %div TEXT : #{@wine.comment}
+    - if @wine.shop_name.present?
+      .wines-show__content-box_shopname
+        %div SHOP : #{@wine.shop_name}
+    - if @wine.feature_ids.present?
+      .wines-show__content-box_tag
+        %div TAGS :
+        - @feature.each do |feature|
+          .wines-show__content-box_tag2
+            %div #{feature.name}
