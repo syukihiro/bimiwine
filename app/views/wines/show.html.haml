@@ -3,10 +3,10 @@
     = image_tag 'IMG_7119.jpg', class: 'bimi-m2'
 .wines-show__content
   .wines-show__content-box
+    .wines-show__content-box_name
+      %div #{@wine.name}
     .wines-show__content-box_phot
       = image_tag @wineimages.images.url, class: "content-box_phot"
-    .wines-show__content-box_name
-      %div NAME : #{@wine.name}
     - if @wine.comment.present?
       .wines-show__content-box_comment
         %div TEXT : #{@wine.comment}
@@ -19,3 +19,8 @@
         - @feature.each do |feature|
           .wines-show__content-box_tag2
             %div #{feature.name}
+    - if current_user.id == @wine.user_id
+      .wines-show__content-box_editbtn
+        = link_to '#' do
+          .wine-editbtn
+            Edit
