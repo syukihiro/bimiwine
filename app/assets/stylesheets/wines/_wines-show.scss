@@ -3,15 +3,27 @@
   height: 100vh;
   
   &-box{
-    width: 40%;
-    height: 100%;
+    width: 30%;
+    height: 80%;
     margin: 0 auto;
     padding-top: 3%;
+    border: solid 1px;
+    border-color: darkgray;
+    border-radius: 3%;
+    position: relative;
+    &_name{
+      width: 100%;
+      margin: 0 auto;
+      text-align: center;
+      font-weight: 900;
+      font-size: 22px;
+    }
 
     &_phot{
-      width: 70%;
+      width: 100%;
       height: 40%;
       margin: 0 auto;
+      margin-top: 5%;
       
       img{
         object-fit: cover;
@@ -21,28 +33,36 @@
       }
     }
 
-    &_name{
-      width: 70%;
-      margin: 0 auto;
-      padding-top: 5%;
-    }
 
     &_comment{
-      width: 70%;
+      width: 100%;
       margin: 0 auto;
       padding-top: 5%;
     }
 
     &_shopname{
-      width: 70%;
+      width: 100%;
       margin: 0 auto;
       padding-top: 5%;
     }
 
     &_tag{
-      width: 70%;
+      width: 100%;
       margin: 0 auto;
       padding-top: 5%;
+    }
+    &_editbtn{
+      height: 10%;
+      width: 100%;
+      position: absolute;
+      right: 0;
+      bottom: 0;
+      .wine-editbtn{
+        height: 50%;
+        width: 30%;
+        margin: 0 auto;
+        text-align: center;
+      }
     }
   }
 
