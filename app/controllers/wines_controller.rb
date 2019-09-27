@@ -2,8 +2,8 @@ class WinesController < ApplicationController
 
   def index
     @wines = Wine.all
-    @images = WinesImage.all
     @feature = Feature.all
+    @images = WinesImage.all
   end
 
   def new
