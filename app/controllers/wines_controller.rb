@@ -1,6 +1,9 @@
 class WinesController < ApplicationController
 
   def index
+    @wines = Wine.all
+    @feature = Feature.all
+    @images = WinesImage.all
   end
 
   def new
@@ -19,7 +22,6 @@ class WinesController < ApplicationController
   end
 
   def postcomplete
-
   end
 
   def show
