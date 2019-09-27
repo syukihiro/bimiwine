@@ -1,8 +1,8 @@
 class UsersController < ApplicationController
 
   def show
-    @user = User.find(params[:id])
+    @user = User.find_by(id: current_user.id)
     @wine = @user.wines
-    @winesimages = WinesImage.where(params[:id]).order("created_at DESC")
+    @winesimages = WinesImage.where(wine_id: @wine.ids).order("created_at DESC")
   end
 end

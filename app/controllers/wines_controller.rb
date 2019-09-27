@@ -26,7 +26,7 @@ class WinesController < ApplicationController
 
   def show
     @wine = Wine.find(params[:id])
-    @wineimages = WinesImage.find(params[:id])
+    @wineimages = WinesImage.find_by(wine_id: @wine.id)
     @feature = Feature.where(id: @wine.feature_ids)
   end
 
