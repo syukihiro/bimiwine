@@ -2,14 +2,22 @@
 .content
   %h.newpost New Post Wine
   .wines
-    = render 'wines-box'
-    = render 'wines-box'
-    = render 'wines-box'
+    - @wines.each do |wine|
+      .wines-box
+        = link_to wine_path(wine.id) do
+          .wines-box_phot
+            = image_tag "#{wine.wines_images.find_by(wine_id: wine.id).images.url}", class: "wines-pict"
+          .wines-box_name
+            %span Name : #{wine.name}
+          .wines-box_tags
+            %span Tags : 
+            - @feature_id = wine.features.where(id: wine.feature_ids)
+            - @feature_id.each do |feature|
+              %span #{feature.name}
+          .wines-box_heart
+            %i.far.fa-heart
+            %span 10
 .content
-  .wines
-    = render 'wines-box'
-    = render 'wines-box'
-    = render 'wines-box'
 .content-down
   = image_tag "wine.jpg", class: 'content-down_img'
 = render 'module/footer'
