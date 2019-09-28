@@ -21,6 +21,6 @@
     - @winesimages.each do |image|
       %ul
         %li
-          = link_to wine_path(image.id) do
+          = link_to wine_path(image.wine_id) do
             = image_tag image.images.url, class: "wines-pict2"
 = render 'module/footer'
