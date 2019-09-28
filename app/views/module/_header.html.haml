@@ -3,7 +3,9 @@
     .top-header__up__left
       = image_tag "IMG_7119.jpg", class: "bimi-icon"
     .top-header__up__right
-      %input{type: "seach", name: "header-seach", placeholder: "  search for wine...", class: "header-seach"}
+      = form_with url:'/wines/index', method: :get, local: true do |f|
+        = f.text_field :search, class: "header-seach", placeholder: "  search for wine..."
+        = f.submit 'Search'
   .top-header__down
     - if user_signed_in?
       .top-header__down__new
