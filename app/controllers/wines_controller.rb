@@ -1,9 +1,15 @@
 class WinesController < ApplicationController
 
   def index
-    @wines = Wine.all
-    @feature = Feature.all
-    @images = WinesImage.all
+    if params[:search]
+      @wines = Wine.where('name LIKE ?', "%#{params[:search]}%")
+      @feature = Feature.where('name LIKE ?', "%#{params[:search]}%")
+      @images = WinesImage.all
+    else
+      @wines = Wine.all
+      @feature = Feature.all
+      @images = WinesImage.all
+    end
   end
 
   def new
