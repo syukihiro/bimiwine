@@ -12,7 +12,7 @@ Rails.application.routes.draw do
     collection do
       get :wines
       get :postcomplete
-      get :deletecomplete
+      get :editcomplete
     end
   end
 end
