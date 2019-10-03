@@ -1,6 +1,6 @@
 = render 'module/header'
+%h.newpost New Post Wine
 .content
-  %h.newpost New Post Wine
   .wines
     - @wines.each do |wine|
       .wines-box
@@ -17,7 +17,6 @@
           .wines-box_heart
             %i.far.fa-heart
             %span 10
-.content
 .content-down
   = image_tag "wine.jpg", class: 'content-down_img'
 = render 'module/footer'
