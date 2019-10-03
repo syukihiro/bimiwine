@@ -1,0 +1,10 @@
+.header2
+  = link_to '/wines/index' do
+    = image_tag 'IMG_7119.jpg', class: 'bimi-m2'
+.delete-before
+  .delete-before__body
+    本当に削除しますか？
+  .delete-before__btn
+    = link_to("/wines/#{@wine.id}/", {method:"DELETE"}) do
+      削除する
+= render 'module/footer'
