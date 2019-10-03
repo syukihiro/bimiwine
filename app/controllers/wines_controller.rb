@@ -50,6 +50,22 @@ class WinesController < ApplicationController
   end
 end
 
+  def deletebefore
+    @wine = Wine.find(params[:id])
+  end
+
+
+  def destroy
+    @wine = Wine.find(params[:id])
+    if @wine.destroy
+      redirect_to deletecomplete_wines_path
+  end
+end
+
+  def deletecomplete
+
+  end
+
   private
 
   def wine_params
