@@ -8,10 +8,11 @@ Rails.application.routes.draw do
   get 'wines/index'
   get 'users/:id' => 'users#show'
 
-  resources :wines, only: [:new, :create, :show] do
+  resources :wines, only: [:new, :create, :show, :edit, :update] do
     collection do
       get :wines
       get :postcomplete
+      get :deletecomplete
     end
   end
 end

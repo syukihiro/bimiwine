@@ -36,10 +36,24 @@ class WinesController < ApplicationController
     @feature = Feature.where(id: @wine.feature_ids)
   end
 
+  def edit
+    @wine = Wine.find(params[:id])
+    @wineimages = WinesImage.find_by(wine_id: @wine.id)
+    @feature = Feature.where(id: @wine.feature_ids)
+    @feature = Feature.all
+  end
+
+  def update
+    @wine = Wine.find(params[:id])
+    if @wine.update!(wine_params)
+     redirect_to deletecomplete_wines_path
+  end
+end
+
   private
 
   def wine_params
-    params.require(:wine).permit( :name, :comment, :shop_name, feature_ids: [], wines_images_attributes: [:images]).merge( user_id: current_user.id)
+    params.require(:wine).permit( :name, :comment, :shop_name, feature_ids: [], wines_images_attributes: [:id, :images]).merge( user_id: current_user.id)
   end
 
 end
