@@ -21,6 +21,6 @@
             %div #{feature.name}
     - if current_user.id == @wine.user_id
       .wines-show__content-box_editbtn
-        = link_to '#' do
+        = link_to edit_wine_path do
           .wine-editbtn
             Edit
