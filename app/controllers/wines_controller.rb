@@ -46,9 +46,25 @@ class WinesController < ApplicationController
   def update
     @wine = Wine.find(params[:id])
     if @wine.update!(wine_params)
-     redirect_to deletecomplete_wines_path
+     redirect_to editcomplete_wines_path
   end
 end
+
+  def deletebefore
+    @wine = Wine.find(params[:id])
+  end
+
+
+  def destroy
+    @wine = Wine.find(params[:id])
+    if @wine.destroy
+      redirect_to deletecomplete_wines_path
+  end
+end
+
+  def deletecomplete
+
+  end
 
   private
 
