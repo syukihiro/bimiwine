@@ -9,6 +9,7 @@ Rails.application.routes.draw do
   get 'users/:id' => 'users#show'
 
   resources :wines, only: [:new, :create, :show, :edit, :update, :destroy] do
+    resources :likes, only: [:create, :destroy]
     collection do
       get :wines
       get :postcomplete
