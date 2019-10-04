@@ -5,10 +5,12 @@ class WinesController < ApplicationController
       @wines = Wine.where('name LIKE ?', "%#{params[:search]}%").order("created_at DESC")
       @feature = Feature.where('name LIKE ?', "%#{params[:search]}%")
       @images = WinesImage.all
+      @like = Like.new
     else
       @wines = Wine.all.order("created_at DESC")
       @feature = Feature.all
       @images = WinesImage.all
+      @like = Like.new
     end
   end
 
@@ -35,6 +37,7 @@ class WinesController < ApplicationController
     @wine = Wine.find(params[:id])
     @wineimages = WinesImage.find_by(wine_id: @wine.id)
     @feature = Feature.where(id: @wine.feature_ids)
+    @like = Like.new
   end
 
   def edit
