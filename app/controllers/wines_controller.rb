@@ -2,11 +2,11 @@ class WinesController < ApplicationController
 
   def index
     if params[:search]
-      @wines = Wine.where('name LIKE ?', "%#{params[:search]}%")
+      @wines = Wine.where('name LIKE ?', "%#{params[:search]}%").order("created_at DESC")
       @feature = Feature.where('name LIKE ?', "%#{params[:search]}%")
       @images = WinesImage.all
     else
-      @wines = Wine.all
+      @wines = Wine.all.order("created_at DESC")
       @feature = Feature.all
       @images = WinesImage.all
     end
@@ -28,6 +28,7 @@ class WinesController < ApplicationController
   end
 
   def postcomplete
+
   end
 
   def show
