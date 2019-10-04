@@ -15,8 +15,14 @@
             - @feature_id.each do |feature|
               %span #{feature.name}
           .wines-box_heart
-            %i.far.fa-heart
-            %span 10
+            - if current_user.already_liked?(wine)
+              = link_to "/wines/#{wine.id}/likes/:id", method: :delete do
+                %i.fas.fa-heart
+              %span 10
+            - else
+              = link_to wine_likes_path(wine.id), method: :post do
+                %i.far.fa-heart
+              %span 10
 .content-down
   = image_tag "wine.jpg", class: 'content-down_img'
 = render 'module/footer'
