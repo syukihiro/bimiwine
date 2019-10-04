@@ -19,11 +19,12 @@
         - @feature.each do |feature|
           .wines-show__content-box_tag2
             %div #{feature.name}
-    - if current_user.id == @wine.user_id
-      .wines-show__content-box_editbtn
-        = link_to edit_wine_path do
-          .wine-editbtn
-            Edit
-        = link_to deletebefore_wine_path do
-          .wine-editbtn
-            %i.fas.fa-trash-alt
+    - if user_signed_in?
+      - if current_user.id == @wine.user_id
+        .wines-show__content-box_editbtn
+          = link_to edit_wine_path do
+            .wine-editbtn
+              Edit
+          = link_to deletebefore_wine_path do
+            .wine-editbtn
+              %i.fas.fa-trash-alt

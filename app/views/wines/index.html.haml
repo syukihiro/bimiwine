@@ -15,13 +15,17 @@
             - @feature_id.each do |feature|
               %span #{feature.name}
           .wines-box_heart
-            - if current_user.already_liked?(wine)
-              = link_to "/wines/#{wine.id}/likes/:id", method: :delete do
-                %i.fas.fa-heart
-              %span #{Like.where(wine_id: wine.id).count}
+            - if user_signed_in?
+              - if current_user.already_liked?(wine)
+                = link_to "/wines/#{wine.id}/likes/:id", method: :delete do
+                  %i.fas.fa-heart
+                %span #{Like.where(wine_id: wine.id).count}
+              - else
+                = link_to wine_likes_path(wine.id), method: :post do
+                  %i.far.fa-heart
+                %span #{Like.where(wine_id: wine.id).count}
             - else
-              = link_to wine_likes_path(wine.id), method: :post do
-                %i.far.fa-heart
+              %i.far.fa-heart
               %span #{Like.where(wine_id: wine.id).count}
 .content-down
   = image_tag "wine.jpg", class: 'content-down_img'
