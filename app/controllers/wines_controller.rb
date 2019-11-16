@@ -70,6 +70,10 @@ end
 
   end
 
+  def usereditcomplete
+
+  end
+
   private
 
   def wine_params

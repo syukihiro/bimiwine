@@ -20,6 +20,23 @@ class Users::RegistrationsController < Devise::RegistrationsController
       redirect_to new_user_registration_path
     end
   end
+
+  def edit
+    @user = User.find_by(id: current_user.id)
+  end
+
+  def update
+    @user = User.find_by(id: current_user.id)
+    if current_user == @user
+      if @user.update(user_params)
+        redirect_to usereditcomplete_wines_path
+      else 
+        redirect_to action "edit"
+      end
+    else
+      redirect_to wines_index_path
+    end
+  end
   # GET /resource/edit
   # def edit
   #   super

@@ -15,6 +15,7 @@ Rails.application.routes.draw do
       get :postcomplete
       get :editcomplete
       get :deletecomplete
+      get :usereditcomplete
     end
       get :deletebefore, on: :member
   end

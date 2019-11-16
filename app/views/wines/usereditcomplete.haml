@@ -1,0 +1,10 @@
+.header
+  = link_to '/wines/index' do
+    = image_tag 'IMG_7119.jpg', class: 'bimi-m'
+.post-complete
+  .post-complete__body
+    ユーザー情報の編集が完了しました。
+  .post-complete__btn
+    = link_to "/users/#{current_user.id}" do
+      マイページに戻る
+= render 'module/footer'
