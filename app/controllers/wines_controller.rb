@@ -74,6 +74,11 @@ end
 
   end
 
+  def goodpage
+    @likes = Like.where(user_id: current_user.id)
+    
+  end
+
   private
 
   def wine_params
