@@ -1,47 +1,116 @@
 .bimi-m{
-  height: 10%;
   width: 10%;
-  margin-left: 45%;
+  margin-left: 25%;
+}
+
+.title{
+  font-family: 'Londrina Shadow';
+  color: darkorange;
 }
 
 .content2{
-  height: 100px;
-  &-title{
-    width: 100%;
-    display: block;
+  width: 100%;
+  .field{
+    position: relative;
     margin: 0 auto;
-    text-align: center;
-    padding-top: 3%;
-    span{
-      display: block;
-      font-size: 20px;
-      background-color: ghostwhite;
+    width: 70%;
+    input{
+      border: 2px solid #aaa;
+      border-radius: 4px;
+      margin: 8px 0;
+      outline: none;
+      box-sizing: border-box;
+      transition: 0.3s;
+    }
+  }
+
+  .actions{
+    padding-top: 5%;
+    width: 70%;
+    margin: 0 auto;
+    .submit-btn{
+      display: inline-block;
+      background-color: #ffa300;
+      font-size: 16px;
+      color: #FFF;
+      font-weight: bold;
+      border-radius: 4px;
+      border-bottom: 4px solid #d37800;
     }
   }
 }
 
-.field{
-  margin: 0 auto;
-  width: 30%;
-  padding-top: 2%;
-  input{
-    width: 100%;
-    height: 35px;
-    padding-left: 2%;
+// Media用
+@media (max-width: 480px){
+  .header{
+    height: 80px;
+    position: relative;
+    .bimi-m{
+      width: 10%;
+      position: absolute;
+      top: 55%;
+      left: 20%;
+      margin: 0 auto;
+    }
+    .title{
+    position: absolute;
+    left: 30%;
+    top: 50%;
+      p{
+        text-decoration: none;
+        font-size: 2.5rem;
+        font-weight: bold;
+      }
+    }
   }
-}
 
-.actions{
-  width: 40%;
-  margin: 0 auto;
-  padding-top: 5%;
-  padding-bottom: 5%;
-  input{
+  .content2{
+    padding-top: 20%;
+  }
+
+  .field{
+    position: relative;
     margin: 0 auto;
-    display: block;
-    width: 50%;
-    background-color: ghostwhite;
-    font-size: 14px;
-    height: 48px;
+    width: 70%;
+    input{
+      width: 100%;
+      border: 2px solid #aaa;
+      border-radius: 4px;
+      margin: 8px 0;
+      outline: none;
+      padding: 8px;
+      padding-left: 14%;
+      box-sizing: border-box;
+      transition: 0.3s;
+    }
+    :focus{
+      border-color: dodgerBlue;
+      box-shadow: 0 0 8px 0 dodgerBlue;
+    }
+    :focus + i{
+      color: dodgerBlue;
+    }
+
+    i{
+    position: absolute;
+    left: 0;
+    top: 13px;
+    padding: 9px 8px;
+    color: #aaa;
+    transition: 0.3s;
+    }
+  }
+  .actions{
+   .submit-btn{
+      -webkit-appearance: none;
+      background-color: #ffa300;
+      font-size: 1rem;
+      color: #FFF;
+      font-weight: bold;
+      border-radius: 4px;
+      border-bottom: 4px solid #d37800;
+      width: 100%;
+      padding: 4%;
+    }
   }
 }
