@@ -32,9 +32,9 @@
 @media (max-width: 480px){
   .footer{
     position: fixed;
-    height: 20%;
+    height: calc(20% + env(safe-area-inset-bottom));
     width: 100%;
-    bottom: env(safe-area-inset-bottom);
+    bottom: 0;
     &-box_left{
       width: 20%;
       display: inline-block;
