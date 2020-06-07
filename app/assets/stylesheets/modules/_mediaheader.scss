@@ -1,32 +1,13 @@
 .top-header{
-  height: 155px;
   width: 100%;
-
   &__up{
-    height: 45%;
-    width: 70%;
+    height: 100%;
     margin: 2% auto 0;
-    &__left{
-      height: 100%;
-      width: 30%;
-      float: left;
-      .bimi-icon{
-        width: 55%;
-        height: 188%;
-        margin-left: 30%;
-        object-fit: cover;
-      }
-    }
-    &__right{
-      height: 100%;
+    input{
       width: 70%;
-      float: right;
-      .header-seach{
-        width: 90%;
-        height: 50%;
-        margin-top: 5%;
-        outline: none;
-      }
+      margin-top: 5%;
+      padding: 1%;
+      outline: none;
     }
   }
 
@@ -45,11 +26,52 @@
       }
     }
     &__login{
-      width: 9%;
       display: inline-block;
       a{
         color: red;
         text-decoration: none;
+      }
+    }
+  }
+}
+// Media用
+@media (max-width: 480px){
+  .top-header{
+    &__up{
+      height: 37%;
+      position: relative;
+      margin: 0;
+      input{
+      width: 70%;
+      border: 2px solid #aaa;
+      border-radius: 4px;
+      outline: none;
+      padding: 1% 1% 2% 6%;
+      box-sizing: border-box;
+      transition: 0.3s;
+      margin-left: 15%;
+      }
+      :focus{
+        -webkit-appearance: none;
+        border-color: dodgerBlue;
+        box-shadow: 0 0 8px 0 dodgerBlue;
+      }
+      i{
+        position: absolute;
+        top: 49%;
+        left: 17%;
+        color: #aaa;
+      }
+    }
+    &__down{
+      width: 100%;
+      margin: 0;
+      font-family: 'Noto Sans JP', sans-serif;
+      font-size: 0.8rem;
+      &__new{
+        width: 49%;
+        margin: 0;
+        padding: 0 0 0 16%;
       }
     }
   }

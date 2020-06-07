@@ -43,7 +43,7 @@
 // Media用
 @media (max-width: 480px){
   .header{
-    height: 80px;
+    height: 65px;
     position: relative;
     .bimi-m{
       width: 10%;
@@ -84,6 +84,7 @@
       transition: 0.3s;
     }
     :focus{
+      -webkit-appearance: none;
       border-color: dodgerBlue;
       box-shadow: 0 0 8px 0 dodgerBlue;
     }

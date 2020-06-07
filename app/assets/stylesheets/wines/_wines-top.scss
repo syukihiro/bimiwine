@@ -11,11 +11,11 @@
 }
 
 .newpost{
-  padding-left: 42%;
   font-weight: 900;
   font-size: 35px;
   display: block;
   padding-top: 2%;
+  text-align: center;
 }
 
 .wines{
@@ -64,5 +64,16 @@
         color: unset;
       }
     }
+  }
+}
+// Media用
+@media (max-width: 480px){
+  .newpost{
+    font-weight: 900;
+    font-size: 1.4rem;
+    display: block;
+    padding-top: 15%;
+    text-align: center;
+    font-family: 'Kaushan Script', cursive;
   }
 }
