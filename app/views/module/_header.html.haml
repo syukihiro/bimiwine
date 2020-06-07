@@ -1,11 +1,8 @@
 .top-header
   .top-header__up
-    .top-header__up__left
-      = image_tag "IMG_7119.jpg", class: "bimi-icon"
-    .top-header__up__right
-      = form_with url:'/wines/index', method: :get, local: true do |f|
-        = f.text_field :search, class: "header-seach", placeholder: "  search for wine..."
-        = f.submit 'Search'
+    = form_with url:'/wines/index', method: :get, local: true do |f|
+      = f.text_field :search, class: "header-seach", placeholder: "キーワード"
+      %i.fas.fa-search.search_icon{"aria-hidden" => "true"}
   .top-header__down
     - if user_signed_in?
       .top-header__down__new

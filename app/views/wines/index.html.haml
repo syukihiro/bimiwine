@@ -1,3 +1,8 @@
+.header
+  = link_to '/wines/index' do
+    = image_tag 'icon.jpg', class: 'bimi-m'
+    .title
+      %p Bimi Wine
 = render 'module/header'
 %h.newpost New Post Wine
 .content
@@ -27,6 +32,4 @@
             - else
               %i.far.fa-heart
               %span #{Like.where(wine_id: wine.id).count}
-.content-down
-  = image_tag "wine.jpg", class: 'content-down_img'
 = render 'module/footer'
