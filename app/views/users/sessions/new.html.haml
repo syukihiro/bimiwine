@@ -1,17 +1,15 @@
-%h2 Log in
-= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
-  .field
-    = f.label :email
-    %br/
-    = f.email_field :email, autofocus: true, autocomplete: "email"
-  .field
-    = f.label :password
-    %br/
-    = f.password_field :password, autocomplete: "current-password"
-  - if devise_mapping.rememberable?
+.header
+  = link_to '/wines/index' do
+    .title
+      %p Bimi Wine
+.content2
+  = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
     .field
-      = f.check_box :remember_me
-      = f.label :remember_me
-  .actions
-    = f.submit "Log in"
-= render "users/shared/links"
+      = f.email_field :email, autofocus: true, autocomplete: "email", autofocus: true, placeholder: "メールアドレス"
+      %i.fa.fa-envelope.fa-lg.fa-fw{"aria-hidden" => "true"}
+    .field
+      = f.password_field :password, autocomplete: "current-password", placeholder: "パスワード"
+      %i.fa.fa-key{"aria-hidden" => "true"}
+    .actions
+      = f.submit "Log in", class: "submit-btn"
+= render 'module/footer'
