@@ -1,13 +1,3 @@
-.bimi-m{
-  width: 10%;
-  margin-left: 25%;
-}
-
-.title{
-  font-family: 'Londrina Shadow';
-  color: darkorange;
-}
-
 .content2{
   width: 100%;
   .field{
@@ -42,28 +32,6 @@
 
 // Media用
 @media (max-width: 480px){
-  .header{
-    height: 65px;
-    position: relative;
-    .bimi-m{
-      width: 10%;
-      position: absolute;
-      top: 55%;
-      left: 20%;
-      margin: 0 auto;
-    }
-    .title{
-    position: absolute;
-    left: 30%;
-    top: 50%;
-      p{
-        text-decoration: none;
-        font-size: 2.5rem;
-        font-weight: bold;
-      }
-    }
-  }
-
   .content2{
     padding-top: 20%;
   }

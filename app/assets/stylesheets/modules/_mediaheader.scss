@@ -1,25 +1,46 @@
+.title{
+  font-family: 'Permanent Marker', cursive;
+  color: darkgoldenrod;
+  text-align: center;
+  p{
+    font-size: 3rem;
+  }
+}
 .top-header{
   width: 100%;
   &__up{
     height: 100%;
-    margin: 2% auto 0;
+    position: relative;
     input{
-      width: 70%;
+      width: 60%;
       margin-top: 5%;
-      padding: 1%;
+      margin-left: 17%;
+      padding: 1% 1% 1% 3%;
       outline: none;
+    }
+    :focus{
+      -webkit-appearance: none;
+      border-color: dodgerBlue;
+      box-shadow: 0 0 8px 0 dodgerBlue;
+    }
+    :focus + i{
+      -webkit-appearance: none;
+      color: dodgerBlue;
+    }
+    i{
+    position: absolute;
+    left: 18%;
+    bottom: 16%;
+    color: #aaa;
+    
     }
   }
 
   &__down{
-    width: 50%;
-    height: 30%;
-    margin-left: 30%;
+    width: 100%;
     &__new{
-      width: 15%;
       display: inline-block;
-      margin-left: 75%;
-      padding-top: 2%;
+      margin-left: 70%;
       a{
         text-decoration: none;
         color: blue;
@@ -36,6 +57,7 @@
 }
 // Media用
 @media (max-width: 480px){
+  
   .top-header{
     &__up{
       height: 37%;
@@ -51,16 +73,9 @@
       transition: 0.3s;
       margin-left: 15%;
       }
-      :focus{
-        -webkit-appearance: none;
-        border-color: dodgerBlue;
-        box-shadow: 0 0 8px 0 dodgerBlue;
-      }
       i{
-        position: absolute;
-        top: 49%;
-        left: 17%;
-        color: #aaa;
+        bottom: 20%;
+        left: 16%;
       }
     }
     &__down{
@@ -72,6 +87,21 @@
         width: 49%;
         margin: 0;
         padding: 0 0 0 16%;
+      }
+    }
+  }
+  .header{
+    height: 70px;
+    position: relative;
+    border-bottom: 1px solid #f0f0f0;
+    .title{
+    position: absolute;
+    left: 35%;
+    top: 30%;
+      p{
+        font-size: 1.5rem;
+        font-weight: bold;
+        display: inline-block;
       }
     }
   }
