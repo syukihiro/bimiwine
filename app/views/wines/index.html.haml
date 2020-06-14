@@ -11,8 +11,6 @@
         = link_to wine_path(wine.id) do
           .wines-box_phot
             = image_tag "#{wine.wines_images.find_by(wine_id: wine.id).images.url}", class: "wines-pict"
-          .wines-box_name
-            %span Name : #{wine.name}
           .wines-box_tags
             %span Tags : 
             - @feature_id = wine.features.where(id: wine.feature_ids)
@@ -31,4 +29,3 @@
             - else
               %i.far.fa-heart
               %span #{Like.where(wine_id: wine.id).count}
-= render 'module/footer'
