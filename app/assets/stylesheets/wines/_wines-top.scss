@@ -76,4 +76,25 @@
     text-align: center;
     font-family: 'Kaushan Script', cursive;
   }
+
+  .wines{
+    width: 97%;
+    &-box{
+    width: 47%;
+    height: 30%;
+    margin-top: 1%;
+    margin-right: 0;
+    margin-bottom: 1%;
+    margin-left: 1%;
+    a {
+      text-decoration: none;
+    }
+      &_tags{
+        height: 16%;
+      }
+      &_heart{
+        padding-right: 5%;
+      }
+    }
+  }
 }

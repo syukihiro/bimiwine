@@ -64,5 +64,13 @@
       }
     }
   }
+}
 
+//Media用
+@media (max-width: 480px){
+  .wines-show__content{
+    &-box{
+      width: 100%;
+    }
+  }
 }
