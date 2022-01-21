@@ -6,29 +6,30 @@
 %h.newpost New Post Wine
 .content
   .wines
-    - @wines.each do |wine|
-      .wines-box
-        = link_to wine_path(wine.id) do
-          .wines-box_phot
-            = image_tag "#{wine.wines_images.find_by(wine_id: wine.id).images.url}", class: "wines-pict"
-          .wines-box_name
-            %span Name : #{wine.name}
-          .wines-box_tags
-            %span Tags : 
-            - @feature_id = wine.features.where(id: wine.feature_ids)
-            - @feature_id.each do |feature|
-              %span #{feature.name}
-          .wines-box_heart
-            - if user_signed_in?
-              - if current_user.already_liked?(wine)
-                = link_to "/wines/#{wine.id}/likes/:id", method: :delete do
-                  %i.fas.fa-heart
-                %span #{Like.where(wine_id: wine.id).count}
-              - else
-                = link_to wine_likes_path(wine.id), method: :post do
-                  %i.far.fa-heart
-                %span #{Like.where(wine_id: wine.id).count}
-            - else
-              %i.far.fa-heart
-              %span #{Like.where(wine_id: wine.id).count}
-= render 'module/footer'
+    .jscroll
+      %ul
+        - @wines.each do |wine|
+          %li
+            .wines-box
+              = link_to wine_path(wine.id) do
+                .wines-box_phot
+                  = image_tag "#{wine.wines_images.find_by(wine_id: wine.id).images.url}", class: "wines-pict"
+                .wines-box_tags
+                  %span Tags : 
+                  - @feature_id = wine.features.where(id: wine.feature_ids)
+                  - @feature_id.each do |feature|
+                    %span #{feature.name}
+                .wines-box_heart
+                  - if user_signed_in?
+                    - if current_user.already_liked?(wine)
+                      = link_to "/wines/#{wine.id}/likes/:id", method: :delete do
+                        %i.fas.fa-heart
+                      %span #{Like.where(wine_id: wine.id).count}
+                    - else
+                      = link_to wine_likes_path(wine.id), method: :post do
+                        %i.far.fa-heart
+                      %span #{Like.where(wine_id: wine.id).count}
+                  - else
+                    %i.far.fa-heart
+                    %span #{Like.where(wine_id: wine.id).count}
+        = paginate @wines

@@ -73,3 +73,4 @@ gem 'carrierwave'
 gem 'rmagick'
 gem 'nested_form_fields'
 gem "select2-rails"
+gem 'kaminari'

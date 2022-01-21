@@ -1,5 +1,5 @@
 .post-complete {
-  height: 50vh;
+  height: 100vh;
   width: 100vw;
 
   &__body{
@@ -24,6 +24,16 @@
     a {
       text-decoration: none;
       color: blue;
+    }
+  }
+}
+@media (max-width: 480px){
+  .post-complete{
+    &__body{
+      width: 50%;
+    }
+    &__btn{
+      width: 50%;
     }
   }
 }

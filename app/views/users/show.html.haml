@@ -1,9 +1,10 @@
-.header2
-  = link_to '/wines/index' do
-    = image_tag 'IMG_7119.jpg', class: 'bimi-m2'
+.header
+  = link_to '/wines/index' ,style: "text-decoration: none" do
+    .title
+      %p Bimi Wine
 .content3
   .content3-title
-    %span Name: #{@user.nickname}
+    %span #{@user.nickname}
   .content3-menu
     = link_to '/wines/new' do
       %i.far.fa-plus-square
@@ -14,8 +15,9 @@
     = link_to "/users/edit" do
       %i.far.fa-address-card
       %span プロフィール編集
-    %i.fas.fa-sign-out-alt
-    = link_to "ログアウト", destroy_user_session_path, method: :delete, class: 'navbar-link'
+    = link_to destroy_user_session_path, method: :delete, class: 'navbar-link' do
+      %i.fas.fa-sign-out-alt
+      %span ログアウト
 .post-box
   - if @winesimages.present?
     - @winesimages.each do |image|
@@ -23,4 +25,3 @@
         %li
           = link_to wine_path(image.wine_id) do
             = image_tag image.images.url, class: "wines-pict2"
-= render 'module/footer'
