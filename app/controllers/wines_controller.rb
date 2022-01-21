@@ -2,12 +2,12 @@ class WinesController < ApplicationController
 
   def index
     if params[:search]
-      @wines = Wine.where('name LIKE ?', "%#{params[:search]}%").order("created_at DESC")
+      @wines = Wine.where('name LIKE ?', "%#{params[:search]}%").page(params[:page]).per(2)
       @feature = Feature.where('name LIKE ?', "%#{params[:search]}%")
       @images = WinesImage.all
       @like = Like.new
     else
-      @wines = Wine.all.order("created_at DESC")
+      @wines = Wine.page(params[:page]).per(2)
       @feature = Feature.all
       @images = WinesImage.all
       @like = Like.new

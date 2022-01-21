@@ -1,6 +1,13 @@
 .header
-  = link_to '/wines/index' do
-    = image_tag 'IMG_7119.jpg', class: 'bimi-m'
-.content-good
-  - @likes.each do |wine|
+  = link_to '/wines/index' ,style: "text-decoration: none" do
+    .title
+      %p Bimi Wine
+.post-box
+  - if @likes.present?
+    - current_user.liked_wines.each do |wine|
+      %ul
+        %li
+          = link_to wine_path(wine.id) do
+            = image_tag wine.images.url, class: "wines-pict2"
+
   
